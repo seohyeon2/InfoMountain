@@ -55,8 +55,10 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let url = NSURL(string: "https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html") else { return }
+        guard let url = NSURL(string: Links().linkDatas[indexPath.row]) else { return }
         let blogSafariView: SFSafariViewController = SFSafariViewController(url: url as URL)
+        blogSafariView.modalPresentationStyle = .pageSheet
+        
         self.present(blogSafariView, animated: true, completion: nil)
     }
 }
