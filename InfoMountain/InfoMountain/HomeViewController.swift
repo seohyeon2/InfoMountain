@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeViewController: UIViewController, UICollectionViewDelegate {
 
@@ -15,14 +16,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
+        setupNavi()
         setupCollectionView()
     }
     
+    func setupNavi() {
+        self.title = "InfoMountain"
+    }
+    
     func setupCollectionView() {
+        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
         
@@ -48,6 +51,13 @@ extension HomeViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
+}
+
+extension HomeViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let url = NSURL(string: "https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html") else { return }
+        let blogSafariView: SFSafariViewController = SFSafariViewController(url: url as URL)
+        self.present(blogSafariView, animated: true, completion: nil)
+    }
 }
 
