@@ -16,14 +16,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavi()
         setupCollectionView()
     }
-    
-    func setupNavi() {
-        self.title = "InfoMountain"
-    }
-    
+
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -31,11 +26,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
         
         flowLayout.scrollDirection = .vertical
         
-        let collectionCellWidth = (UIScreen.main.bounds.width - CVCell.spacingWidth * (CVCell.cellColumns - 1)) / CVCell.cellColumns
+        let collectionCellWidth = (UIScreen.main.bounds.width - HVCell.spacingWidth * (HVCell.cellColumns - 1)) / HVCell.cellColumns
         
         flowLayout.itemSize = CGSize(width: collectionCellWidth, height: collectionCellWidth)
-        flowLayout.minimumInteritemSpacing = CVCell.spacingWidth
-        flowLayout.minimumLineSpacing = CVCell.spacingWidth
+        flowLayout.minimumInteritemSpacing = HVCell.spacingWidth
+        flowLayout.minimumLineSpacing = HVCell.spacingWidth
         
         collectionView.collectionViewLayout = flowLayout
     }
@@ -47,7 +42,13 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView( _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: String(describing: HomeCollectionViewCell.self),
+            for: indexPath
+        ) as? HomeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+
         cell.titleLabel.text = Links().labels[indexPath.row]
         return cell
     }
@@ -55,6 +56,43 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let storyboard = storyboard else {
+            return
+        }
+        
+        if indexPath.row == 0 {
+            guard let CautionVC = storyboard.instantiateViewController(
+                withIdentifier: String(describing: CautionViewController.self)
+            ) as? CautionViewController else {
+                return
+            }
+            
+            self.present(CautionVC, animated: true)
+            return
+        }
+        
+        if indexPath.row == 1 {
+            guard let materialsVC = storyboard.instantiateViewController(
+                withIdentifier: String(describing: MaterialsViewController.self)
+            ) as? MaterialsViewController else {
+                return
+            }
+            
+            self.present(materialsVC, animated: true)
+            return
+        }
+        
+        if (3...5).contains(indexPath.row) {
+            guard let recommendationVC = storyboard.instantiateViewController(
+                withIdentifier: String(describing: RecommendationViewController.self)
+            ) as? RecommendationViewController else {
+                return
+            }
+            
+            self.present(recommendationVC, animated: true)
+            return
+        }
+        
         guard let url = NSURL(string: Links().linkDatas[indexPath.row]) else { return }
         let blogSafariView: SFSafariViewController = SFSafariViewController(url: url as URL)
         blogSafariView.modalPresentationStyle = .pageSheet

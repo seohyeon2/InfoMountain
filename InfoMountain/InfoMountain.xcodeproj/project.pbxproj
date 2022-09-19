@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052A2C3328D7BFDB006B18DC /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052A2C3228D7BFDB006B18DC /* RecommendationViewController.swift */; };
 		0581BB5428D15AF6004D53B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581BB5328D15AF6004D53B2 /* AppDelegate.swift */; };
 		0581BB5628D15AF6004D53B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581BB5528D15AF6004D53B2 /* SceneDelegate.swift */; };
 		0581BB5828D15AF6004D53B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581BB5728D15AF6004D53B2 /* HomeViewController.swift */; };
@@ -15,11 +16,13 @@
 		0581BB6028D15AF8004D53B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0581BB5E28D15AF8004D53B2 /* LaunchScreen.storyboard */; };
 		0581BB6F28D170FB004D53B2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581BB6E28D170FB004D53B2 /* HomeCollectionViewCell.swift */; };
 		0581BB7128D17134004D53B2 /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581BB7028D17134004D53B2 /* Metric.swift */; };
-		0581BB7728D1A797004D53B2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581BB7628D1A797004D53B2 /* ListViewController.swift */; };
+		05E7B10C28D7957C009CA2D4 /* MaterialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E7B10B28D7957C009CA2D4 /* MaterialsViewController.swift */; };
+		05E7B10E28D7991B009CA2D4 /* CautionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E7B10D28D7991B009CA2D4 /* CautionViewController.swift */; };
 		3C1C1C7028D1759000B39612 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C1C6F28D1759000B39612 /* Links.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		052A2C3228D7BFDB006B18DC /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		0581BB5028D15AF6004D53B2 /* InfoMountain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoMountain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0581BB5328D15AF6004D53B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0581BB5528D15AF6004D53B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +33,8 @@
 		0581BB6128D15AF8004D53B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0581BB6E28D170FB004D53B2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0581BB7028D17134004D53B2 /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
-		0581BB7628D1A797004D53B2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		05E7B10B28D7957C009CA2D4 /* MaterialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsViewController.swift; sourceTree = "<group>"; };
+		05E7B10D28D7991B009CA2D4 /* CautionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CautionViewController.swift; sourceTree = "<group>"; };
 		3C1C1C6F28D1759000B39612 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +71,9 @@
 				0581BB5328D15AF6004D53B2 /* AppDelegate.swift */,
 				0581BB5528D15AF6004D53B2 /* SceneDelegate.swift */,
 				0581BB5728D15AF6004D53B2 /* HomeViewController.swift */,
+				05E7B10B28D7957C009CA2D4 /* MaterialsViewController.swift */,
+				05E7B10D28D7991B009CA2D4 /* CautionViewController.swift */,
+				052A2C3228D7BFDB006B18DC /* RecommendationViewController.swift */,
 				0581BB6E28D170FB004D53B2 /* HomeCollectionViewCell.swift */,
 				0581BB7028D17134004D53B2 /* Metric.swift */,
 				3C1C1C6F28D1759000B39612 /* Links.swift */,
@@ -74,7 +81,6 @@
 				0581BB5C28D15AF8004D53B2 /* Assets.xcassets */,
 				0581BB5E28D15AF8004D53B2 /* LaunchScreen.storyboard */,
 				0581BB6128D15AF8004D53B2 /* Info.plist */,
-				0581BB7628D1A797004D53B2 /* ListViewController.swift */,
 			);
 			path = InfoMountain;
 			sourceTree = "<group>";
@@ -151,12 +157,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0581BB5828D15AF6004D53B2 /* HomeViewController.swift in Sources */,
+				05E7B10E28D7991B009CA2D4 /* CautionViewController.swift in Sources */,
+				05E7B10C28D7957C009CA2D4 /* MaterialsViewController.swift in Sources */,
+				052A2C3328D7BFDB006B18DC /* RecommendationViewController.swift in Sources */,
 				3C1C1C7028D1759000B39612 /* Links.swift in Sources */,
 				0581BB5428D15AF6004D53B2 /* AppDelegate.swift in Sources */,
 				0581BB7128D17134004D53B2 /* Metric.swift in Sources */,
 				0581BB5628D15AF6004D53B2 /* SceneDelegate.swift in Sources */,
 				0581BB6F28D170FB004D53B2 /* HomeCollectionViewCell.swift in Sources */,
-				0581BB7728D1A797004D53B2 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

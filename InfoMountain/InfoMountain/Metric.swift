@@ -7,8 +7,14 @@
 
 import UIKit
 
-public struct CVCell {
+public struct HVCell {
     static let spacingWidth: CGFloat = 1
     static let cellColumns: CGFloat = 3
+    private init() {}
+}
+
+public struct Image {
+    static let square: String = "square"
+    static let checkmark: String = "checkmark.square.fill"
     private init() {}
 }
